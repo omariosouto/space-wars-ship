@@ -1,0 +1,49 @@
+import {
+  gql,
+} from 'apollo-server-micro';
+import SHIPS_DB from '../ships/ships';
+import PILOTS_DB from './pilots';
+
+const typeDefs = gql`
+  type Pilot {
+    name: String!
+    slug: String 
+    description: String
+    image: String
+    cost: Int 
+    ships: [Ship]
+  }
+
+  input PilotInput {
+    name: String!
+  }
+
+  extend type Query {
+    pilots(input: PilotInput): [Pilot]!
+    pilot(input: PilotInput): Pilot
+  }
+`; 
+
+const resolvers = {
+  Query: {
+    pilots(_, { input }, ctx) {
+      // TODO: Implement
+      return PILOTS_DB;
+    },
+    pilot(_, { input }, ctx) {
+      // TODO: Implement
+      return PILOTS_DB[0];
+    }
+  },
+  Pilot: {
+    ships(value) {
+      const pilotShips = new Set(value.ships);
+      return SHIPS_DB.filter((ship) => pilotShips.has(ship.slug));
+    }
+  }
+}
+
+export default {
+  typeDefs,
+  resolvers,
+}
