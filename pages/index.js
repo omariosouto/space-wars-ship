@@ -10,6 +10,7 @@ const ShipsWithPilotsQuery = gql`
       amount,
       pilots {
         name,
+        image,
         slug,
         cost
       }
@@ -36,6 +37,7 @@ export default function Home() {
                 <li key={pilot.slug}>
                   {pilot.name}
                   ({pilot.cost})
+                  <img src={pilot.image} />
                 </li>
               ))}
               </ul>
