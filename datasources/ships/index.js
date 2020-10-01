@@ -5,11 +5,18 @@ import SHIP_DB from './data';
 import PILOTS_DB from '../pilots/data';
 
 const typeDefs = gql`
+  enum ShipSize {
+    LARGE
+    MEDIUM
+    SMALL
+  }
+
   type Ship {
     slug: String
     name: String
     amount: Int
     nickname: String,
+    size: ShipSize
     pilots: [Pilot]
     urls: [String]
   }
@@ -43,6 +50,10 @@ const resolvers = {
         const pilotShips = new Set(pilot.ships);
         return pilotShips.has(ship.slug);
       });
+    },
+    amount(value) {
+      const ship = value;
+      return ship.urls.length;
     }
   }
 }

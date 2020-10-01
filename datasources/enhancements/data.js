@@ -1,4 +1,5 @@
 import { alianceTypes } from '../aliances/data';
+import { shipSizes } from '../ships/data';
 
 export const enhancementSides = {
   FRONT: 'FRONT', // Talento de Elite
@@ -168,6 +169,37 @@ export default [
         description: `Somente U-Wing. Título. Carta Dupla.
         Ao revelar uma manobra [parada 0], você pode rotacionar sua nave 180º.
         Após executar uma manobra, você pode virar esta carta.`
+      }
+    ] 
+  },
+  {
+    aliances: [
+      alianceTypes.REBELS
+    ],
+    ships: [],
+    restrictions: {
+      ships: {
+        size: [
+          shipSizes.SMALL
+        ]
+      }
+    },
+    slug: 'intensidade',
+    name: 'Intensidade',
+    cost: 2,
+    type: enhancementTypes.ELITE_TALENT,
+    url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Intensidade',
+    sides: [
+      {
+        type: enhancementSides.FRONT,
+        description: `Somente Nave Pequena. Carta Dupla.
+        Após realizar uma ação de impulso ou de pirueta, você pode colocar 1 ficha de foco ou de desvio em sua nave. Se fizer isso, vire esta carta.`,
+      },
+      {
+        type: enhancementSides.BACK,
+        nickname: 'Consumida',
+        description: `Somente Nave Pequena. Carta Dupla.
+        No final da fase de Combate, você pode gastar 1 ficha de foco ou de desvio para virar esta carta.`
       }
     ] 
   },

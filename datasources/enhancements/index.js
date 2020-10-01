@@ -24,6 +24,14 @@ const typeDefs = gql`
     description: String!
   }
 
+  type EnhancementShipRestriction {
+    sizes: [ShipSize]
+  }
+
+  type EnhancementRestrictions {
+    ships: EnhancementShipRestriction
+  }
+
   type Enhancement {
     aliances: [Aliance]
     ships: [Ship]
@@ -32,6 +40,7 @@ const typeDefs = gql`
     cost: String
     type: EnhancementType
     sides: [EnhancementSide]
+    restrictions: EnhancementRestrictions
   }
 
   input EnhancementInput {
@@ -44,6 +53,15 @@ const typeDefs = gql`
   }
 `;
 
+function checkShipEnhancementRestrictions(enhancementShipRestrictions, ship) {
+  const shipRestrictionKeys = Object.keys(enhancementShipRestrictions);
+  return shipRestrictionKeys.reduce((_, shipRestrictionKey) => {
+    const shipRestrictionSet = new Set(enhancementShipRestrictions[shipRestrictionKey]);
+    const currentShipRestrictionValue = ship[shipRestrictionKey];
+    console.log(shipRestrictionSet, currentShipRestrictionValue);
+    return shipRestrictionSet.has(currentShipRestrictionValue);
+  }, true);
+}
 
 const resolvers = {
   Query: {
@@ -66,13 +84,26 @@ const resolvers = {
   Enhancement: {
     ships(value) {
       const enhancement = value;
-      const hasEnhancementShips = Boolean(enhancement.ships.length); 
+      const hasEnhancementShipsAssociated = Boolean(enhancement.ships.length); 
+      const hasRestrictions = Boolean(enhancement.restrictions);
+      
+      if(!hasEnhancementShipsAssociated) {
+        console.log('hasRestrictions', hasRestrictions)
+        return SHIPS_DB.filter((ship) => {
+          if(hasRestrictions) {
+            if(enhancement.restrictions.ships) {
+              return checkShipEnhancementRestrictions(
+                enhancement.restrictions.ships,
+                ship
+              )
+            }
+          }
 
-      if(!hasEnhancementShips) {
-        return SHIPS_DB;
+          return true;
+        });
       }
 
-      return SHIPS_DB.filter((ship) => {
+      return SHIPS_DB.filter(function associatedShips(ship) {
         const enhancementShips = new Set(enhancement.ships);
 
         if(enhancementShips.has(ship.slug)) {
@@ -81,7 +112,7 @@ const resolvers = {
         return false;
       });
     }
-  }
+  },
 }
 
 export default {

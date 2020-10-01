@@ -1,6 +1,6 @@
 import { alianceTypes } from '../aliances/data';
 
-const shipSizes = {
+export const shipSizes = {
   LARGE: 'LARGE',
   MEDIUM: 'MEDIUM',
   SMALL: 'SMALL',
@@ -20,8 +20,6 @@ export default [
       'https://xwing-miniaturas.fandom.com/pt/wiki/Pacote_de_Expans%C3%A3o_Millennium_Falcon',
       'https://xwing-miniaturas.fandom.com/pt/wiki/Pacote_de_Expans%C3%A3o_Her%C3%B3is_da_Resist%C3%AAncia'
     ],
-    // TODO: Return amount based in URLs
-    amount: 2,
   },
   {
     aliances: [
@@ -32,8 +30,7 @@ export default [
     name: "U-Wing",
     urls: [
       'https://xwing-miniaturas.fandom.com/pt/wiki/Pacote_de_Expans%C3%A3o_U-Wing',
-    ],
-    amount: 1,
+    ],    
   },
   {
     aliances: [
@@ -44,8 +41,7 @@ export default [
     name: "X-Wing",
     urls: [
       'https://xwing-miniaturas.fandom.com/pt/wiki/Kit_B%C3%A1sico_X-Wing',
-    ],
-    amount: 1,
+    ],    
   },
   {
     aliances: [
@@ -57,7 +53,6 @@ export default [
     urls: [
       'https://xwing-miniaturas.fandom.com/pt/wiki/Kit_B%C3%A1sico_X-Wing',
       'https://xwing-miniaturas.fandom.com/pt/wiki/Kit_B%C3%A1sico_X-Wing',
-    ],
-    amount: 2,
+    ],    
   },
 ]
