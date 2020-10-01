@@ -1,4 +1,5 @@
-import { webkit } from 'playwright';
+import chromium from 'chrome-aws-lambda';
+
 
 
 const pilotList = [
@@ -32,12 +33,29 @@ export default async function(req, res) {
   // 1 - Add the scrapper
   // 2 - Create a file "cache" for don't do the request again
   // 3 - 
-
-  const browser = await webkit.launch();
+  const url = 'https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22';
+  const browser = await chromium.puppeteer.launch({
+      executablePath: await chromium.executablePath,
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      headless: true,
+  });
+  
   const page = await browser.newPage();
-  await page.goto('https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22');
-  const title = await page.innerHTML('.page-header__title');
+  await page.goto(url);
+  // await page.screenshot({path: 'example.png'});
+  const title = await page.evaluate(() => {
+    return {
+      title: document.querySelector('.page-header__title').innerHTML,
+    };
+  });
   await browser.close();
+
+  // const browser = await webkit.launch();
+  // const page = await browser.newPage();
+  // await page.goto('https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22');
+  // const title = await page.innerHTML('.page-header__title');
+  // await browser.close();
 
   res.send({
     name: 'X-Wing Scrapper',
