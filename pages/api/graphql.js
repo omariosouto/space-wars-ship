@@ -48,6 +48,8 @@ export const schema = makeExecutableSchema({
 
 const server = new ApolloServer({
   schema,
+  introspection: true,
+  playground: true,
 });
 
 export default (req, res) => {
