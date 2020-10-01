@@ -2,20 +2,24 @@ import React from 'react';
 import { useQuery, gql } from '@apollo/client'
 import { initializeApollo } from '../infra/apollo/client'
 
-const PilotsQuery = gql`
+const ShipsWithPilotsQuery = gql`
   query {
-    pilots {
-      slug,
+    ships {
       name,
-      cost
+      slug,
+      pilots {
+        name,
+        slug,
+        cost
+      }
     }
   }
 `
 
 export default function Home() {
   const {
-    data: { pilots },
-  } = useQuery(PilotsQuery);
+    data: { ships },
+  } = useQuery(ShipsWithPilotsQuery);
 
   return (
     <main>
@@ -23,10 +27,17 @@ export default function Home() {
       <article>
         <h1>Pilots:</h1>
         <ul>
-          {pilots.map((pilot) => (
-            <li key={pilot.slug}>
-              {pilot.name}
-              ({pilot.cost})
+          {ships.map((ship) => (
+            <li key={ship.slug}>
+              {ship.name}
+              <ul>
+              {ship.pilots.map((pilot) => (
+                <li key={pilot.slug}>
+                  {pilot.name}
+                  ({pilot.cost})
+                </li>
+              ))}
+              </ul>
             </li>
           ))}
         </ul>
@@ -40,7 +51,7 @@ export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
   await apolloClient.query({
-    query: PilotsQuery,
+    query: ShipsWithPilotsQuery,
   })
 
   return {

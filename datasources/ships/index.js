@@ -1,8 +1,8 @@
 import {
   gql,
 } from 'apollo-server-micro';
-import SHIP_DB from './ships';
-import PILOTS_DB from '../pilots/pilots';
+import SHIP_DB from './data';
+import PILOTS_DB from '../pilots/data';
 
 const typeDefs = gql`
   type Ship {
@@ -36,8 +36,11 @@ const resolvers = {
   },
   Ship: {
     pilots(value) {
-      const shipPilots = new Set(value.pilots);
-      return PILOTS_DB.filter((pilot) => shipPilots.has(pilot.slug));
+      const ship = value;
+      return PILOTS_DB.filter((pilot) => {
+        const pilotShips = new Set(pilot.ships);
+        return pilotShips.has(ship.slug);
+      });
     }
   }
 }

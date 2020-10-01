@@ -1,8 +1,8 @@
 import {
   gql,
 } from 'apollo-server-micro';
-import SHIPS_DB from '../ships/ships';
-import PILOTS_DB from './pilots';
+import SHIPS_DB from '../ships/data';
+import PILOTS_DB from './data';
 
 const typeDefs = gql`
   type Pilot {
@@ -12,6 +12,7 @@ const typeDefs = gql`
     image: String
     cost: Int 
     ships: [Ship]
+    enhancements: [EnhancementType]
   }
 
   input PilotInput {
