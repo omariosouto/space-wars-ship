@@ -30,7 +30,7 @@ export default [
         Quando você receber uma carta de Dano, você pode imediatamente descartá-la e recuperar 1 escudo.
         Em seguida, descarte esta carta de Melhoria.`,
       }
-    ]
+    ],
   },
   {
     aliances: [

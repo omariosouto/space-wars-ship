@@ -13,13 +13,13 @@ const typeDefs = gql`
     TITLE
   }
 
-  enum EnhancementSide {
+  enum EnhancementSides {
     FRONT,
     BACK,
   }
 
   type EnhancementSide {
-    type: EnhancementSide
+    type: EnhancementSides
     nickname: String
     description: String!
   }

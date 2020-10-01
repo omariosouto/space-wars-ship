@@ -7,6 +7,7 @@ const ShipsWithPilotsQuery = gql`
     ships {
       name,
       slug,
+      amount,
       pilots {
         name,
         slug,
@@ -29,7 +30,7 @@ export default function Home() {
         <ul>
           {ships.map((ship) => (
             <li key={ship.slug}>
-              {ship.name}
+              {ship.name} [{ship.amount}]
               <ul>
               {ship.pilots.map((pilot) => (
                 <li key={pilot.slug}>

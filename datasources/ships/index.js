@@ -8,8 +8,10 @@ const typeDefs = gql`
   type Ship {
     slug: String
     name: String
+    amount: Int
     nickname: String,
     pilots: [Pilot]
+    urls: [String]
   }
 
   input ShipInput {
