@@ -1,52 +1,11 @@
 import chromium from 'chrome-aws-lambda';
-import { launch } from 'puppeteer-core';
+import fs from 'fs';
+import path from 'path';
 
-
-let _page
-const isDev = !process.env.AWS_REGION;
-
-const exePath = process.platform === 'win32'
-? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
-: process.platform === 'linux'
-? '/usr/bin/google-chrome'
-: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-
-async function getOptions(isDev) {
-  let options;
-  if (isDev) {
-      options = {
-          args: [],
-          executablePath: exePath,
-          headless: true
-      };
-  } else {
-      options = {
-          args: chrome.args,
-          executablePath: await chrome.executablePath,
-          headless: chrome.headless,
-      };
-  }
-  return options;
-}
-
-
-async function getPage(isDev) {
-  if (_page) {
-      return _page;
-  }
-  const options = await getOptions(isDev);
-  const browser = await launch(options);
-  _page = await browser.newPage();
-  return _page;
-}
-
-// =====
-
-const pilotList = [
+const pilotsUrlList = [
   // [Kit Básico X-Wing]: https://xwing-miniaturas.fandom.com/pt/wiki/Kit_B%C3%A1sico_X-Wing
   // Impire
   'https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22',
-  /*
   'https://xwing-miniaturas.fandom.com/pt/wiki/%22Dark_Curse%22',
   'https://xwing-miniaturas.fandom.com/pt/wiki/%22Night_Beast%22',
   'https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Negro',
@@ -57,46 +16,93 @@ const pilotList = [
   'https://xwing-miniaturas.fandom.com/pt/wiki/Biggs_Darklighter',
   'https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Vermelho',
   'https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_Recruta',
-  */
 ];
 
-function createPilot() {
-  return {};
+
+function localStorage() {
+  const dataCachePath = path.join(process.cwd(), '_data-cache.json');
+  const dataCached = JSON.parse(fs.readFileSync(dataCachePath).toString());
+  const db = dataCached || {};
+
+  function persist() {
+    if(process.env.NODE_ENV !== 'production') {
+      fs.writeFileSync(dataCachePath, JSON.stringify(db, null, 2));
+    }
+  }
+
+  function get(key) {
+    return db[key];
+  }
+  function set(key, value) { 
+    db[key] = value;
+  }
+
+  function getAll() {
+    return db
+  }
+  
+  return {
+    set,
+    get,
+    persist,
+    getAll,
+  }
 }
 
-function createEnhancement() {
-  return {};
-}
-
-
-export default async function(req, res) {
-  // 1 - Add the scrapper
-  // 2 - Create a file "cache" for don't do the request again
-  // 3 - 
-
-  const url = 'https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22';
-  const page = await getPage(isDev);
-  await page.goto(url);
-  // await page.screenshot({path: 'example.png'});
-  const title = await page.evaluate(() => {
-    return {
-      title: document.querySelector('.page-header__title').innerHTML,
-    };
+export default async (req,res) => {
+  const cacheStorage = localStorage();
+  const browser = await chromium.puppeteer.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: true,
   });
+
+  const pilotsPromise = pilotsUrlList.map(async (pilotUrl) => {
+    const pilotRegistered = cacheStorage.get('pilots').find(
+      (pilot) => pilot.url === pilotUrl
+    );
+
+    const isPilotRegistered = Boolean(pilotRegistered);
+    if(isPilotRegistered) {
+      return pilotRegistered;
+    }
+
+
+    const page = await browser.newPage();
+    await page.goto(pilotUrl);
+    return {
+      url: pilotUrl,
+      ...await page.evaluate(() => {
+        return {
+          name: document.querySelector('.page-header__title').innerHTML,
+          description: (() => {
+            if (document.getElementById('Texto.2FHabilidades_da_Carta')) {
+              return document.getElementById('Texto.2FHabilidades_da_Carta').parentNode.nextElementSibling.innerText
+            }
+
+            return '';
+          })(),
+          image: document.querySelector('.thumbimage').getAttribute('src'),
+          slug: '', // name com slugify
+          cost: 'N/A',
+          ships: [], // How to get the ship?,
+          enhancements: Array.from(document.getElementById('Melhorias_Poss.C3.ADveis').parentNode.nextElementSibling.querySelectorAll('a')).map(($a) => {
+              return $a.innerHTML;
+          })
+        };
+      }),
+    }
+  });
+
+  const pilots = await Promise.all(pilotsPromise);
+  cacheStorage.set('pilots', pilots);
+  cacheStorage.persist();
+  
   await browser.close();
-
-  // const browser = await webkit.launch();
-  // const page = await browser.newPage();
-  // await page.goto('https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22');
-  // const title = await page.innerHTML('.page-header__title');
-  // await browser.close();
-
   res.send({
-    name: 'X-Wing Scrapper',
-    pilots: [
-    ],
-    enhancements: [
-    ],
-    response: title,
+    statusCode: 200,
+    pilots: cacheStorage.get('pilots'),
   })
+
 }

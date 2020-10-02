@@ -1,0 +1,135 @@
+{
+  "pilots": [
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22",
+      "name": "\"Mauler Mithel\"",
+      "description": "Ao atacar em Alcance 1, role 1 dado de ataque adicional.",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/e/e8/Mauler-mithel.png/revision/latest/scale-to-width-down/300?cb=20160406205102&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Talento de Elite",
+        "Modificação"
+      ]
+    },
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/%22Dark_Curse%22",
+      "name": "\"Dark Curse\"",
+      "description": "Quando você estiver defendendo, as naves atacantes não podem gastar fichas de foco ou rerrolar dados de ataque.",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/3/36/Dark-curse.png/revision/latest/scale-to-width-down/300?cb=20160406204720&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Modificação"
+      ]
+    },
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/%22Night_Beast%22",
+      "name": "\"Night Beast\"",
+      "description": "Após executar uma manobra verde, você pode realizar uma ação de foco gratuita.",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/4/47/Night-beast.png/revision/latest/scale-to-width-down/300?cb=20160406205104&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Modificação"
+      ]
+    },
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Negro",
+      "name": "Piloto do Esquadrão Negro",
+      "description": "",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/8/8d/Piloto-negro.png/revision/latest/scale-to-width-down/300?cb=20160406205228&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Talento de Elite",
+        "Modificação"
+      ]
+    },
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Obsidian",
+      "name": "Piloto do Esquadrão Obsidian",
+      "description": "",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/0/02/Piloto-obsidian.png/revision/latest/scale-to-width-down/300?cb=20160406205229&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Modificação"
+      ]
+    },
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_da_Academia",
+      "name": "Piloto da Academia",
+      "description": "",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/a/a0/Piloto-academia.png/revision/latest/scale-to-width-down/300?cb=20160406205105&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Modificação"
+      ]
+    },
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/Luke_Skywalker",
+      "name": "Luke Skywalker",
+      "description": "Ao defender, você pode mudar 1 de seus resultados foco para um resultado desvio.",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/8/8c/Luke-skywalker.png/revision/latest/scale-to-width-down/300?cb=20160406205100&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Talento de Elite",
+        "Modificação",
+        "Astromecânico",
+        "Torpedo"
+      ]
+    },
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/Biggs_Darklighter",
+      "name": "Biggs Darklighter",
+      "description": "Outras naves amigas em Alcance 1 não podem ser alvo de ataques se o atacante puder, em vez disso, atacar você.",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/9/90/Biggs-darklighter.png/revision/latest/scale-to-width-down/300?cb=20160406204714&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Modificação",
+        "Astromecânico",
+        "Torpedo"
+      ]
+    },
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Vermelho",
+      "name": "Piloto do Esquadrão Vermelho",
+      "description": "",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/b/b6/Piloto-vermelho.png/revision/latest/scale-to-width-down/300?cb=20160406205233&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Modificação",
+        "Torpedo",
+        "Astromecânico"
+      ]
+    },
+    {
+      "url": "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_Recruta",
+      "name": "Piloto Recruta",
+      "description": "",
+      "image": "https://vignette.wikia.nocookie.net/xwing-miniaturas/images/3/3a/Piloto-recruta.png/revision/latest/scale-to-width-down/300?cb=20160406205230&path-prefix=pt",
+      "slug": "",
+      "cost": "N/A",
+      "ships": [],
+      "enhancements": [
+        "Modificação",
+        "Torpedo",
+        "Astromecânico"
+      ]
+    }
+  ]
+}
