@@ -1,6 +1,46 @@
 import chromium from 'chrome-aws-lambda';
+import { launch } from 'puppeteer-core';
 
 
+let _page
+const isDev = !process.env.AWS_REGION;
+
+const exePath = process.platform === 'win32'
+? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+: process.platform === 'linux'
+? '/usr/bin/google-chrome'
+: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+
+async function getOptions(isDev) {
+  let options;
+  if (isDev) {
+      options = {
+          args: [],
+          executablePath: exePath,
+          headless: true
+      };
+  } else {
+      options = {
+          args: chrome.args,
+          executablePath: await chrome.executablePath,
+          headless: chrome.headless,
+      };
+  }
+  return options;
+}
+
+
+async function getPage(isDev) {
+  if (_page) {
+      return _page;
+  }
+  const options = await getOptions(isDev);
+  const browser = await launch(options);
+  _page = await browser.newPage();
+  return _page;
+}
+
+// =====
 
 const pilotList = [
   // [Kit Básico X-Wing]: https://xwing-miniaturas.fandom.com/pt/wiki/Kit_B%C3%A1sico_X-Wing
@@ -33,15 +73,9 @@ export default async function(req, res) {
   // 1 - Add the scrapper
   // 2 - Create a file "cache" for don't do the request again
   // 3 - 
+
   const url = 'https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22';
-  const browser = await chromium.puppeteer.launch({
-      executablePath: await chromium.executablePath,
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      headless: true,
-  });
-  
-  const page = await browser.newPage();
+  const page = await getPage(isDev);
   await page.goto(url);
   // await page.screenshot({path: 'example.png'});
   const title = await page.evaluate(() => {
