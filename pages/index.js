@@ -24,7 +24,9 @@ export default function Home() {
 
   return (
     <main>
-      TODO: Add query all entities by aliance
+      <p>TODO: Add query all entities by aliance</p>    
+      <p>TODO: Get all enhancements images</p>
+      <p>TODO: Create selection flow</p>
       <article>
         <h1>Ships:</h1>
         {/* <ul>
