@@ -3,10 +3,10 @@ import {
   gql,
   makeExecutableSchema
 } from 'apollo-server-micro';
-import pilots from '../../datasources/pilots';
-import ships from '../../datasources/ships';
-import enhancements from '../../datasources/enhancements';
-import aliances from '../../datasources/aliances';
+import pilots from '../../datasources/entities/pilots';
+import ships from '../../datasources/entities/ships';
+import enhancements from '../../datasources/entities/enhancements';
+import aliances from '../../datasources/entities/aliances';
 
 const typeDefs = gql`
   type Query {

@@ -7,6 +7,8 @@ import SHIPS_DB from '../ships/data';
 const typeDefs = gql`
   enum EnhancementType {
     ELITE_TALENT
+    ASTROMECH
+    TORPEDO
     MODIFICATION
     MISSILE
     CREW
@@ -58,7 +60,6 @@ function checkShipEnhancementRestrictions(enhancementShipRestrictions, ship) {
   return shipRestrictionKeys.reduce((_, shipRestrictionKey) => {
     const shipRestrictionSet = new Set(enhancementShipRestrictions[shipRestrictionKey]);
     const currentShipRestrictionValue = ship[shipRestrictionKey];
-    console.log(shipRestrictionSet, currentShipRestrictionValue);
     return shipRestrictionSet.has(currentShipRestrictionValue);
   }, true);
 }
@@ -88,7 +89,6 @@ const resolvers = {
       const hasRestrictions = Boolean(enhancement.restrictions);
       
       if(!hasEnhancementShipsAssociated) {
-        console.log('hasRestrictions', hasRestrictions)
         return SHIPS_DB.filter((ship) => {
           if(hasRestrictions) {
             if(enhancement.restrictions.ships) {

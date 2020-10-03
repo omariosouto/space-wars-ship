@@ -12,6 +12,7 @@ const typeDefs = gql`
   }
 
   type Ship {
+    aliances: [Aliance]
     slug: String
     name: String
     amount: Int
@@ -34,7 +35,6 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     ships(_, { input, ...args }, ctx) {
-      console.log(_, args, ctx, input);
       // TODO: Implement
       return SHIP_DB;
     },

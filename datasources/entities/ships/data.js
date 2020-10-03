@@ -7,6 +7,7 @@ export const shipSizes = {
 }
 
 export default [
+  /*
   {
     // TODO: Add ship size condition and relate it to "ships" in enhancements
     aliances: [
@@ -43,6 +44,7 @@ export default [
       'https://xwing-miniaturas.fandom.com/pt/wiki/Pacote_de_Expans%C3%A3o_Her%C3%B3is_da_Resist%C3%AAncia',
     ],    
   },
+  */
   {
     aliances: [
       alianceTypes.REBELS

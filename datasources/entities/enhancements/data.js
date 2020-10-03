@@ -12,6 +12,8 @@ export const enhancementTypes = {
   MISSILE: 'MISSILE', // Missíl
   CREW: 'CREW', // Tripulação
   TITLE: 'TITLE', // Melhoria de nave, Título
+  ASTROMECH: 'ASTROMECH', // Astromecânico (ex: R2-D2)
+  TORPEDO: 'TORPEDO', // Torpedo (ex: Torpedo de prótons)
 }
 
 export default [
@@ -203,4 +205,110 @@ export default [
       }
     ] 
   },
+  // 
+  {
+    aliances: [
+      alianceTypes.REBELS
+    ],
+    ships: [],
+    restrictions: {
+      ships: {
+        size: [
+          shipSizes.SMALL
+        ]
+      }
+    },
+    slug: 'r2-d2',
+    name: 'R2-D2',
+    cost: 4,
+    type: enhancementTypes.ASTROMECH,
+    url: 'https://xwing-miniaturas.fandom.com/pt/wiki/R2-D2',
+    sides: [
+      {
+        type: enhancementSides.FRONT,
+        description: `Depois de efetuar uma manobra verde, você pode recuperar um escudo (até o valor de seu escudo).`,
+      },
+    ] 
+  },
+  //
+  {
+    aliances: [
+      alianceTypes.REBELS
+    ],
+    ships: [],
+    restrictions: {},
+    slug: 'r2-f2',
+    name: 'R2-f2',
+    cost: 4,
+    type: enhancementTypes.ASTROMECH,
+    url: 'https://xwing-miniaturas.fandom.com/pt/wiki/R2-F2',
+    sides: [
+      {
+        type: enhancementSides.FRONT,
+        description: `Ação: Aumente o valor de sua agilidade em 1 até o final deste turno.`,
+      },
+    ] 
+  },
+  {
+    ships: [],
+    restrictions: {},
+    slug: 'r2-f2',
+    name: 'R2-f2',
+    cost: 3,
+    type: enhancementTypes.ASTROMECH,
+    url: 'https://xwing-miniaturas.fandom.com/pt/wiki/R2-F2',
+    sides: [
+      {
+        type: enhancementSides.FRONT,
+        description: `Ação: Aumente o valor de sua agilidade em 1 até o final deste turno.`,
+      },
+    ] 
+  },
+  {
+    ships: [],
+    restrictions: {},
+    slug: 'determinacao',
+    name: 'Determinação',
+    cost: 1,
+    type: enhancementTypes.ELITE_TALENT,
+    url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Determina%C3%A7%C3%A3o',
+    sides: [
+      {
+        type: enhancementSides.FRONT,
+        description: `Quando você recebe uma carta de Dano virada para cima do tipo Piloto, descarte-a imediatamente sem resolver seu efeito.`,
+      },
+    ] 
+  },
+  {
+    ships: [],
+    restrictions: {},
+    slug: 'franco-atirador',
+    name: 'Franco-Atirador',
+    cost: 3,
+    type: enhancementTypes.ELITE_TALENT,
+    url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Franco-Atirador',
+    sides: [
+      {
+        type: enhancementSides.FRONT,
+        description: `Ação: Ao atacar nesta rodada, você pode mudar 1 de seus resultados foco para um resultado crítico e todos os seus outros resultados foco para resultados acerto.`,
+      },
+    ] 
+  },
+  {
+    ships: [],
+    restrictions: {},
+    slug: 'torpedos-de-proton',
+    name: 'Torpedos de Próton',
+    cost: 4,
+    type: enhancementTypes.TORPEDO,
+    url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Torpedos_de_Pr%C3%B3ton',
+    sides: [
+      {
+        type: enhancementSides.FRONT,
+        description: `Ataque (mira): Gaste sua mira e descarte esta carta para realizar este ataque.
+Você pode mudar 1 de seus resultados foco para um resultado crítico.`,
+      },
+    ] 
+  },
+  
 ];

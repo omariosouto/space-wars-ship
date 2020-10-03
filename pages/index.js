@@ -5,14 +5,13 @@ import { initializeApollo } from '../infra/apollo/client'
 const ShipsWithPilotsQuery = gql`
   query {
     ships {
-      name,
-      slug,
-      amount,
+      name 
       pilots {
-        name,
-        image,
-        slug,
+        name
+        image
         cost
+        expertise
+        enhancements
       }
     }
   }
@@ -20,14 +19,23 @@ const ShipsWithPilotsQuery = gql`
 
 export default function Home() {
   const {
-    data: { ships },
+    data: { ships, pilots },
   } = useQuery(ShipsWithPilotsQuery);
 
   return (
     <main>
-
+      TODO: Add query all entities by aliance
       <article>
-        <h1>Pilots:</h1>
+        <h1>Ships:</h1>
+        {/* <ul>
+        {pilots.map((pilot) => (
+          <li key={pilot.slug}>
+            {pilot.name}
+            ({pilot.cost})
+            <img src={pilot.image} />
+          </li>
+        ))}
+        </ul> */}
         <ul>
           {ships.map((ship) => (
             <li key={ship.slug}>
