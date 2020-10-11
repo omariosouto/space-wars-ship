@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useQuery, gql } from '@apollo/client'
 import { initializeApollo } from '../infra/apollo/client'
 
 const ShipsWithPilotsQuery = gql`
   query {
-    ships {
-      name 
-      pilots {
+    aliances {
+      name
+      image
+      ships {
         name
         image
-        cost
-        expertise
-        enhancements
+        amount
+        pilots {
+          name
+          image
+          cost
+        }
       }
     }
   }
@@ -19,35 +23,36 @@ const ShipsWithPilotsQuery = gql`
 
 export default function Home() {
   const {
-    data: { ships, pilots },
+    data: { aliances },
   } = useQuery(ShipsWithPilotsQuery);
 
   return (
     <main>
-      <p>TODO: Add query all entities by aliance</p>    
-      <p>TODO: Get all enhancements images</p>
       <p>TODO: Create selection flow</p>
+      <p>TODO: Get all ships images</p>
+      <p>TODO: Get all enhancements images</p>
+
       <article>
-        <h1>Ships:</h1>
-        {/* <ul>
-        {pilots.map((pilot) => (
-          <li key={pilot.slug}>
-            {pilot.name}
-            ({pilot.cost})
-            <img src={pilot.image} />
-          </li>
-        ))}
-        </ul> */}
+        <h1>Aliances</h1>
         <ul>
-          {ships.map((ship) => (
-            <li key={ship.slug}>
-              {ship.name} [{ship.amount}]
+          {aliances.map((aliance) => (
+            <li key={aliance.name}>
+              <h2>{aliance.name}</h2>
+              <img src={aliance.image} />
               <ul>
-              {ship.pilots.map((pilot) => (
-                <li key={pilot.slug}>
-                  {pilot.name}
-                  ({pilot.cost})
-                  <img src={pilot.image} />
+              {aliance.ships.map((ship) => (
+                <li>
+                  <h3>{ship.name} [{ship.amount}]</h3>
+                  <img src={ship.image} />
+                  <ul>
+                  {ship.pilots.map((pilot) => (
+                    <li key={pilot.slug}>
+                      {pilot.name}
+                      ({pilot.cost})
+                      <img src={pilot.image} />
+                    </li>
+                  ))}
+                  </ul>
                 </li>
               ))}
               </ul>

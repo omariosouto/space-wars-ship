@@ -49,6 +49,7 @@ export default [
     alianceNames: [
       alianceTypes.REBELS
     ],
+    image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/f/f8/XWing-components.png/revision/latest?cb=20200707063211&path-prefix=pt',
     size: shipSizes.SMALL,
     slug: "x-wing",
     name: "X-Wing",
@@ -60,6 +61,7 @@ export default [
     alianceNames: [
       alianceTypes.EMPIRE
     ],
+    image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/d/df/TIEFighter-components.png/revision/latest?cb=20200807221956&path-prefix=pt',
     size: shipSizes.SMALL,
     slug: "tie-fighter",
     name: "Tie Fighter",

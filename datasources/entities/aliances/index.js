@@ -26,6 +26,7 @@ const typeDefs = gql`
 
   type Aliance {
     name: AlianceName
+    image: String
     pilots: [Pilot]
     ships: [Ship]
   }

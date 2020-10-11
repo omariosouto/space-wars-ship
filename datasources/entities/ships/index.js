@@ -15,6 +15,7 @@ const typeDefs = gql`
     alianceNames: [AlianceName]
     slug: String
     name: String
+    image: String
     amount: Int
     nickname: String,
     size: ShipSize
