@@ -1,4 +1,4 @@
-import { alianceTypes } from '../aliances/data';
+import { allianceTypes } from '../alliances/data';
 
 export const shipSizes = {
   LARGE: 'LARGE',
@@ -10,7 +10,7 @@ export default [
   /*
   {
     // TODO: Add ship size condition and relate it to "ships" in enhancements
-    alianceNames: [
+    allianceNames: [
       alianceTypes.REBELS
     ],
     size: shipSizes.LARGE,
@@ -23,7 +23,7 @@ export default [
     ],
   },
   {
-    alianceNames: [
+    allianceNames: [
       alianceTypes.REBELS
     ],
     size: shipSizes.MEDIUM,
@@ -34,7 +34,7 @@ export default [
     ],    
   },
   {
-    alianceNames: [
+    allianceNames: [
       alianceTypes.REBELS
     ],
     size: shipSizes.SMALL,
@@ -46,8 +46,8 @@ export default [
   },
   */
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/f/f8/XWing-components.png/revision/latest?cb=20200707063211&path-prefix=pt',
     size: shipSizes.SMALL,
@@ -58,8 +58,8 @@ export default [
     ],    
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/d/df/TIEFighter-components.png/revision/latest?cb=20200807221956&path-prefix=pt',
     size: shipSizes.SMALL,

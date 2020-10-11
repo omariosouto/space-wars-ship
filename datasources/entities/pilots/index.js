@@ -6,7 +6,7 @@ import PILOTS_DB from './data';
 
 const typeDefs = gql`
   type Pilot {
-    alianceNames: [AlianceName]
+    allianceNames: [AllianceName]
     name: String!
     slug: String 
     description: String
@@ -14,7 +14,7 @@ const typeDefs = gql`
     cost: Int 
     expertise: Int 
     ships: [Ship]
-    enhancements: [EnhancementType]
+    enhancementTypes: [EnhancementType]
   }
 
   input PilotInput {

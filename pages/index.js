@@ -1,61 +1,34 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useQuery, gql } from '@apollo/client'
 import { initializeApollo } from '../infra/apollo/client'
+import Link from '../src/infra/components/Link';
 
-const ShipsWithPilotsQuery = gql`
+const alliancesQuery = gql`
   query {
-    aliances {
+    alliances {
       name
       image
-      ships {
-        name
-        image
-        amount
-        pilots {
-          name
-          image
-          cost
-        }
-      }
+      slug
     }
   }
 `
 
 export default function Home() {
   const {
-    data: { aliances },
-  } = useQuery(ShipsWithPilotsQuery);
+    data: { alliances },
+  } = useQuery(alliancesQuery);
 
   return (
     <main>
-      <p>TODO: Create selection flow</p>
-      <p>TODO: Get all ships images</p>
-      <p>TODO: Get all enhancements images</p>
-
       <article>
         <h1>Aliances</h1>
         <ul>
-          {aliances.map((aliance) => (
-            <li key={aliance.name}>
-              <h2>{aliance.name}</h2>
-              <img src={aliance.image} />
-              <ul>
-              {aliance.ships.map((ship) => (
-                <li>
-                  <h3>{ship.name} [{ship.amount}]</h3>
-                  <img src={ship.image} />
-                  <ul>
-                  {ship.pilots.map((pilot) => (
-                    <li key={pilot.slug}>
-                      {pilot.name}
-                      ({pilot.cost})
-                      <img src={pilot.image} />
-                    </li>
-                  ))}
-                  </ul>
-                </li>
-              ))}
-              </ul>
+          {alliances.map((alliance) => (
+            <li key={alliance.name}>
+              <Link href={`/alliances/${alliance.slug}`}>
+                <h2>{alliance.name}</h2>
+                <img src={alliance.image} style={{ width: '100px' }} />
+              </Link>
             </li>
           ))}
         </ul>
@@ -66,10 +39,10 @@ export default function Home() {
 }
 
 export async function getStaticProps() {
-  const apolloClient = initializeApollo()
+  const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: ShipsWithPilotsQuery,
+    query: alliancesQuery,
   })
 
   return {

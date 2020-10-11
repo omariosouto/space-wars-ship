@@ -12,7 +12,7 @@ const typeDefs = gql`
   }
 
   type Ship {
-    alianceNames: [AlianceName]
+    allianceNames: [AllianceName]
     slug: String
     name: String
     image: String

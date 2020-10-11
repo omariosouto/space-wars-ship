@@ -1,4 +1,4 @@
-import { alianceTypes } from '../aliances/data';
+import { allianceTypes } from '../alliances/data';
 import { shipSizes } from '../ships/data';
 
 export const enhancementSides = {
@@ -18,8 +18,8 @@ export const enhancementTypes = {
 
 export default [
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [],
     slug: 'chewbacca-tripulacao',
@@ -36,8 +36,8 @@ export default [
     ],
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [
       'yt-1300'
@@ -55,8 +55,8 @@ export default [
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [
       'yt-1300'
@@ -74,8 +74,8 @@ export default [
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [],
     slug: 'luke-skywalker-tripulacao',
@@ -92,8 +92,8 @@ export default [
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [],
     slug: 'nien-nunb-tripulacao',
@@ -110,8 +110,8 @@ export default [
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [],
     slug: 'engenheiro-de-armas',
@@ -128,8 +128,8 @@ export default [
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [],
     slug: 'engenheiro-de-armas',
@@ -146,8 +146,8 @@ export default [
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [
       'u-wing',
@@ -175,8 +175,8 @@ export default [
     ] 
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [],
     restrictions: {
@@ -207,8 +207,8 @@ export default [
   },
   // 
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [],
     restrictions: {
@@ -232,8 +232,8 @@ export default [
   },
   //
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     ships: [],
     restrictions: {},

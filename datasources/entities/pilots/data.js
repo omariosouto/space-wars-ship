@@ -1,10 +1,10 @@
-import { alianceTypes } from '../aliances/data';
+import { allianceTypes } from '../alliances/data';
 import { enhancementTypes } from '../enhancements/data';
 
 export default [
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/1/19/Han-solo.png/revision/latest?cb=20160406204910&path-prefix=pt',
     slug: "han-solo",
@@ -15,7 +15,7 @@ export default [
     ships: [
       "yt-1300"
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.ELITE_TALENT,
       enhancementTypes.MISSILE,
       enhancementTypes.CREW,
@@ -24,8 +24,8 @@ export default [
     url: '',
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/a/a6/Lando-calrissian.png/revision/latest?cb=20160406205059&path-prefix=pt',
     slug: "lando-calrissian",
@@ -36,7 +36,7 @@ export default [
     ships: [
       "yt-1300"
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.ELITE_TALENT,
       enhancementTypes.MISSILE,
       enhancementTypes.CREW,
@@ -45,8 +45,8 @@ export default [
     url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Lando_Calrissian',
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/f/f1/Chewbacca.png/revision/latest?cb=20160406204718&path-prefix=pt',
     slug: "chewbacca",
@@ -57,7 +57,7 @@ export default [
     ships: [
       "yt-1300"
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.ELITE_TALENT,
       enhancementTypes.MISSILE,
       enhancementTypes.CREW,
@@ -66,8 +66,8 @@ export default [
     url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Chewbacca',
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/7/76/Contrabandista-orla-exterior.png/revision/latest?cb=20160406204718&path-prefix=pt',
     slug: "contrabandista-da-orla-exterior",
@@ -78,7 +78,7 @@ export default [
     ships: [
       "yt-1300"
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.CREW,
       enhancementTypes.CREW,
     ],
@@ -86,8 +86,8 @@ export default [
   },
   // ======================================================
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/1/16/Poe-dameron-hotr.jpg/revision/latest?cb=20170626122704&path-prefix=pt',
     slug: "poe-dameron-hdr",
@@ -98,15 +98,15 @@ export default [
     ships: [
       "x-wing-t70",
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.CREW,
       enhancementTypes.CREW,
     ],
     url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Poe_Dameron_(HdR)',
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22",
     name: "\"Mauler Mithel\"",
@@ -118,13 +118,13 @@ export default [
     ships: [
       'tie-fighter'
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.ELITE_TALENT,
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/%22Dark_Curse%22",
     name: "\"Dark Curse\"",
@@ -136,12 +136,12 @@ export default [
     ships: [
       'tie-fighter'
     ],
-    enhancements: [
+    enhancementTypes: [
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/%22Night_Beast%22",
     name: "\"Night Beast\"",
@@ -153,11 +153,11 @@ export default [
     ships: [
       'tie-fighter'
     ],
-    enhancements: []
+    enhancementTypes: []
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Negro",
     name: "Piloto do Esquadrão Negro #1",
@@ -169,13 +169,13 @@ export default [
     ships: [
       'tie-fighter'
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.ELITE_TALENT,
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Negro",
     name: "Piloto do Esquadrão Negro #2",
@@ -187,13 +187,13 @@ export default [
     ships: [
       'tie-fighter'
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.ELITE_TALENT,
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Obsidian",
     name: "Piloto do Esquadrão Obsidian #1",
@@ -205,11 +205,11 @@ export default [
     ships: [
       'tie-fighter'
     ],
-    enhancements: []
+    enhancementTypes: []
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Obsidian",
     name: "Piloto do Esquadrão Obsidian #2",
@@ -221,11 +221,11 @@ export default [
     ships: [
       'tie-fighter'
     ],
-    enhancements: []
+    enhancementTypes: []
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_da_Academia",
     name: "Piloto da Academia #1",
@@ -237,11 +237,11 @@ export default [
     ships: [
       'tie-fighter'
     ],
-    enhancements: []
+    enhancementTypes: []
   },
   {
-    alianceNames: [
-      alianceTypes.EMPIRE
+    allianceNames: [
+      allianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_da_Academia",
     name: "Piloto da Academia #2",
@@ -253,11 +253,11 @@ export default [
     ships: [
       'tie-fighter'
     ],
-    enhancements: []
+    enhancementTypes: []
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Luke_Skywalker",
     name: "Luke Skywalker",
@@ -269,15 +269,15 @@ export default [
     ships: [
       'x-wing',
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.ELITE_TALENT,
       enhancementTypes.ASTROMECH,
       enhancementTypes.TORPEDO
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Biggs_Darklighter",
     name: "Biggs Darklighter",
@@ -289,14 +289,14 @@ export default [
     ships: [
       'x-wing',
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.ASTROMECH,
       enhancementTypes.TORPEDO
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Vermelho",
     name: "Piloto do Esquadrão Vermelho",
@@ -308,14 +308,14 @@ export default [
     ships: [
       'x-wing',
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.TORPEDO,
       enhancementTypes.ASTROMECH
     ]
   },
   {
-    alianceNames: [
-      alianceTypes.REBELS
+    allianceNames: [
+      allianceTypes.REBELS
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_Recruta",
     name: "Piloto Recruta",
@@ -327,7 +327,7 @@ export default [
     ships: [
       'x-wing',
     ],
-    enhancements: [
+    enhancementTypes: [
       enhancementTypes.TORPEDO,
       enhancementTypes.ASTROMECH
     ]
@@ -335,8 +335,8 @@ export default [
 ].map((pilot) => {
   return {
     ...pilot,
-    enhancements: [
-      ...pilot.enhancements,
+    enhancementTypes: [
+      ...pilot.enhancementTypes,
       enhancementTypes.MODIFICATION
     ]
   }

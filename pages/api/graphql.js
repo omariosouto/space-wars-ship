@@ -6,7 +6,7 @@ import {
 import pilots from '../../datasources/entities/pilots';
 import ships from '../../datasources/entities/ships';
 import enhancements from '../../datasources/entities/enhancements';
-import aliances from '../../datasources/entities/aliances';
+import alliances from '../../datasources/entities/alliances';
 
 const typeDefs = gql`
   type Query {
@@ -23,6 +23,7 @@ export const config = {
 const { Pilot } = pilots.resolvers;
 const { Ship } = ships.resolvers;
 const { Enhancement } = enhancements.resolvers;
+const { Alliance } = alliances.resolvers;
 
 export const schema = makeExecutableSchema({
   typeDefs: [
@@ -30,7 +31,7 @@ export const schema = makeExecutableSchema({
     ships.typeDefs,
     pilots.typeDefs,
     enhancements.typeDefs,
-    aliances.typeDefs,
+    alliances.typeDefs,
     typeDefs,
   ],
   resolvers: {
@@ -39,11 +40,12 @@ export const schema = makeExecutableSchema({
       ...pilots.resolvers.Query,
       ...ships.resolvers.Query,
       ...enhancements.resolvers.Query,
-      ...aliances.resolvers.Query,
+      ...alliances.resolvers.Query,
     },
     Ship,
     Pilot,
     Enhancement,
+    Alliance,
   },
 });
 
