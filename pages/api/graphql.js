@@ -39,6 +39,7 @@ export const schema = makeExecutableSchema({
       ...pilots.resolvers.Query,
       ...ships.resolvers.Query,
       ...enhancements.resolvers.Query,
+      ...aliances.resolvers.Query,
     },
     Ship,
     Pilot,

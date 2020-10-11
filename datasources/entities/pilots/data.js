@@ -3,7 +3,7 @@ import { enhancementTypes } from '../enhancements/data';
 
 export default [
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/1/19/Han-solo.png/revision/latest?cb=20160406204910&path-prefix=pt',
@@ -24,7 +24,7 @@ export default [
     url: '',
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/a/a6/Lando-calrissian.png/revision/latest?cb=20160406205059&path-prefix=pt',
@@ -45,7 +45,7 @@ export default [
     url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Lando_Calrissian',
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/f/f1/Chewbacca.png/revision/latest?cb=20160406204718&path-prefix=pt',
@@ -66,7 +66,7 @@ export default [
     url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Chewbacca',
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/7/76/Contrabandista-orla-exterior.png/revision/latest?cb=20160406204718&path-prefix=pt',
@@ -86,7 +86,7 @@ export default [
   },
   // ======================================================
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     image: 'https://vignette.wikia.nocookie.net/xwing-miniaturas/images/1/16/Poe-dameron-hotr.jpg/revision/latest?cb=20170626122704&path-prefix=pt',
@@ -105,7 +105,7 @@ export default [
     url: 'https://xwing-miniaturas.fandom.com/pt/wiki/Poe_Dameron_(HdR)',
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/%22Mauler_Mithel%22",
@@ -123,7 +123,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/%22Dark_Curse%22",
@@ -140,7 +140,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/%22Night_Beast%22",
@@ -156,7 +156,7 @@ export default [
     enhancements: []
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Negro",
@@ -174,7 +174,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Negro",
@@ -192,7 +192,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Obsidian",
@@ -208,7 +208,7 @@ export default [
     enhancements: []
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Obsidian",
@@ -224,7 +224,7 @@ export default [
     enhancements: []
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_da_Academia",
@@ -240,7 +240,7 @@ export default [
     enhancements: []
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_da_Academia",
@@ -256,7 +256,7 @@ export default [
     enhancements: []
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Luke_Skywalker",
@@ -276,7 +276,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Biggs_Darklighter",
@@ -295,7 +295,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_do_Esquadr%C3%A3o_Vermelho",
@@ -314,7 +314,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     url: "https://xwing-miniaturas.fandom.com/pt/wiki/Piloto_Recruta",

@@ -18,7 +18,7 @@ export const enhancementTypes = {
 
 export default [
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [],
@@ -36,7 +36,7 @@ export default [
     ],
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [
@@ -55,7 +55,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [
@@ -74,7 +74,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [],
@@ -92,7 +92,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [],
@@ -110,7 +110,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [],
@@ -128,7 +128,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [],
@@ -146,7 +146,7 @@ export default [
     ]
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [
@@ -175,7 +175,7 @@ export default [
     ] 
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [],
@@ -207,7 +207,7 @@ export default [
   },
   // 
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [],
@@ -232,7 +232,7 @@ export default [
   },
   //
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     ships: [],

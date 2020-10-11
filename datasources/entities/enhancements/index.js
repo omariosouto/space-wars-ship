@@ -35,7 +35,7 @@ const typeDefs = gql`
   }
 
   type Enhancement {
-    aliances: [Aliance]
+    alianceNames: [AlianceName]
     ships: [Ship]
     slug: String
     name: String

@@ -6,7 +6,7 @@ import PILOTS_DB from './data';
 
 const typeDefs = gql`
   type Pilot {
-    aliances: [Aliance]
+    alianceNames: [AlianceName]
     name: String!
     slug: String 
     description: String

@@ -10,7 +10,7 @@ export default [
   /*
   {
     // TODO: Add ship size condition and relate it to "ships" in enhancements
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     size: shipSizes.LARGE,
@@ -23,7 +23,7 @@ export default [
     ],
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     size: shipSizes.MEDIUM,
@@ -34,7 +34,7 @@ export default [
     ],    
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     size: shipSizes.SMALL,
@@ -46,7 +46,7 @@ export default [
   },
   */
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.REBELS
     ],
     size: shipSizes.SMALL,
@@ -57,7 +57,7 @@ export default [
     ],    
   },
   {
-    aliances: [
+    alianceNames: [
       alianceTypes.EMPIRE
     ],
     size: shipSizes.SMALL,
