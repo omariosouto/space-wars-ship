@@ -27,7 +27,10 @@ export default function Alliance({ allianceName }) {
 
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
+  if (!data) return 'No data...';
 
+  const { alliance } = data;
+  const hasShips = Boolean(alliance.ships.length);
   return (
     <div>
       <h1>Alliance:</h1>
