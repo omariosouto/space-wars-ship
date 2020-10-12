@@ -38,7 +38,7 @@ export default function Alliance({ allianceName }) {
         ? (
           <ul>
             {alliance.ships.map((ship) => (
-              <div>
+              <div key={ship.name}>
                 <h2>{ship.name} [{ship.amount}x]</h2>
 
                 <img src={ship.image} style={{ width: '400px' }} />
@@ -62,8 +62,6 @@ export default function Alliance({ allianceName }) {
 
 export async function getStaticProps({ params }) {
   const allianceName = params.slug.toUpperCase();
-
-  console.log('[getStaticProps/params]', params);
   const apolloClient = initializeApollo();
 
   await apolloClient
