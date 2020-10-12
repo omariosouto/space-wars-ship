@@ -19,18 +19,18 @@ const allianceWithShipsQuery = gql`
 `
 
 export default function Alliance({ allianceName }) {
-  const { data: { alliance } } = useQuery(allianceWithShipsQuery, {
+  const { data, error, loading } = useQuery(allianceWithShipsQuery, {
     variables: {
       name: allianceName,
     }
   });
 
-  const hasShips = Boolean(alliance.ships.length);
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
 
   return (
     <div>
-      <h1>Alliance: {alliance.slug}</h1>
-
+      <h1>Alliance:</h1>
       <img src={alliance.image} style={{ width: '100px' }} />
 
       {
