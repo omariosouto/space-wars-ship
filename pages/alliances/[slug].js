@@ -13,8 +13,25 @@ import Card, {
   CardMedia
 } from '../../src/patterns/Card';
 
+// ========
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import Dialog from '@material-ui/core/Dialog';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItem from '@material-ui/core/ListItem';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import Slide from '@material-ui/core/Slide';
+
+
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
@@ -31,6 +48,13 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(6),
+  },
+  appBar: {
+    position: 'relative',
+  },
+  title: {
+    marginLeft: theme.spacing(2),
+    flex: 1,
   },
 }));
 
@@ -52,6 +76,16 @@ const allianceWithShipsQuery = gql`
 
 export default function Alliance({ allianceType }) {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
   const { data, error, loading } = useQuery(allianceWithShipsQuery, {
     variables: {
@@ -114,7 +148,7 @@ export default function Alliance({ allianceType }) {
                       </Text>
                     </CardContent>
                     <CardActions>
-                      <Button size="small" color="secondary">
+                      <Button size="small" color="secondary" onClick={handleClickOpen}>
                         Escolher
                       </Button>
                     </CardActions>
@@ -130,6 +164,27 @@ export default function Alliance({ allianceType }) {
           Voltar para seleção de aliança
         </Link>
       </p>
+
+      <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+              <CloseIcon />
+            </IconButton>
+            <Text variant="h6" className={classes.title}>
+              Ship Name
+            </Text>
+            <Button autoFocus color="inherit" onClick={handleClose}>
+              Salvar time
+            </Button>
+          </Toolbar>
+        </AppBar>
+        <div>
+          <Text>TODO: List selected ship info</Text>
+          <Text>TODO: List all pilots for current ship</Text>
+          <Text>TODO: After select pilot, based in enhancementTypes, list all enhancements</Text>
+        </div>
+      </Dialog>
     </main>
   );
 };
