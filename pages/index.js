@@ -2,20 +2,18 @@ import React from 'react';
 import { useQuery, gql } from '@apollo/client'
 import { initializeApollo } from '../infra/apollo/client'
 
-// Material UI
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import Grid from '@material-ui/core/Grid';
-
 // Fixed
 import Link from '../src/infra/components/Link';
 import Text from '../src/components/foundation/Text';
+import Grid from '../src/components/layout/Grid';
 import Container from '../src/components/layout/Container';
 import Box from '../src/components/layout/Box';
+import Card, {
+  CardActionArea,
+  CardContent,
+  CardMedia
+} from '../src/patterns/Card';
+import Menu from '../src/patterns/Menu';
 
 
 const alliancesQuery = gql`
@@ -35,13 +33,7 @@ export default function Home() {
 
   return (
     <main>
-      <AppBar position="relative">
-        <Toolbar >
-          <Text variant="h6" color="inherit" noWrap>
-            X-Wing Team Builder
-          </Text>
-        </Toolbar>
-      </AppBar>
+      <Menu />
 
       <Container maxWidth="md">
         <Box paddingY={5}>
@@ -88,7 +80,6 @@ export default function Home() {
             ))}
         </Grid>
       </Container>
-
     </main>
   )
 }

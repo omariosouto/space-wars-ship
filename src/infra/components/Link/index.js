@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 const StyledLink = styled(LinkMUI)``;
 
 const Link = React.forwardRef(({ href, children, ...props }, ref) => (
-  <NextLink href={href} passHref forwardedRef={ref} {...props}>
-    <StyledLink>
+  <NextLink href={href} passHref forwardedRef={ref}>
+    <StyledLink {...props}>
       {children}
     </StyledLink>
   </NextLink>

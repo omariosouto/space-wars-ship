@@ -25,7 +25,8 @@ const typeDefs = gql`
   }
 
   type Alliance {
-    name: AllianceName
+    type: AllianceName
+    name: String
     slug: String
     image: String
     pilots: [Pilot]
@@ -33,7 +34,7 @@ const typeDefs = gql`
   }
 
   input AllianceInput {
-    name: AllianceName!
+    type: AllianceName!
   }
 
   extend type Query {
@@ -49,29 +50,29 @@ const resolvers = {
       return ALLIANCES_DB.map((alliance) => {
         return {
           ...alliance,
-          pilots: getPilotsByAlliance(alliance.name),
-          ships: getShipsByAlliance(alliance.name)
+          pilots: getPilotsByAlliance(alliance.type),
+          ships: getShipsByAlliance(alliance.type)
         }
       })
     },
     alliance(_, { input }, ctx) {
-      // TODO: Implement [input.name]
+      // TODO: Implement [input.type]
       return ALLIANCES_DB
         .filter((alliance) => {
-          return alliance.name === input.name;
+          return alliance.type === input.type;
         })
         .map((alliance) => {
           return {
             ...alliance,
-            pilots: getPilotsByAlliance(alliance.name),
-            ships: getShipsByAlliance(alliance.name)
+            pilots: getPilotsByAlliance(alliance.type),
+            ships: getShipsByAlliance(alliance.type)
           }
         })[0];
     }
   },
   Alliance: {
     slug(alliance) {
-      return alliance.name.toLowerCase();
+      return alliance.type.toLowerCase();
     }
   }
 }
